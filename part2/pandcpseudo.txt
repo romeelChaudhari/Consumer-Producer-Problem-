@@ -1,0 +1,95 @@
+pseudo goes here
+
+BEGIN 
+
+Declare and initialize N P C and X, shared values for producers and consumers and a buffer pointer, structures for sleep time of producer, consumer, semaphores and arrays.
+
+Define method Enqueue
+
+Lock the semaphore and the mutex object
+
+IF bufferPoint>N
+Assign the shared value to the buffer 
+Add 1 to input value and mod by N
+Assign the shared value to the pointer of the Producer
+Increment the Producer 
+Print N was produced by the producer
+Set checkVal to 1
+
+ELSE 
+Set checkVal to -1 
+
+Define Deque method 
+
+IF
+
+Lock the semaphore and the mutex object
+Assign the shared value to the buffer 
+Add 1 to output value and mod by N
+Assign the shared value to the pointer of the Consumer
+Decrement the Consumer 
+Print N was consumed by the consumer
+Set checkVal to 1
+
+ELSE 
+Set checkVal to -1 
+
+increment the value of semaphore s by 1
+if there are 1 or more threads waiting, wake 1
+Unlock the mutex object
+Return the checkVal object
+
+Define Producer
+
+DO 
+Assign the Enqueue value to check val
+
+IF 
+CheckVal =1 then Increment the Producer Count
+
+WHILE
+ProducerCount < X, exit the thread
+
+
+Define Consumer
+Check the consumer count 
+IF 
+Consumer count > 0 increment the consumer 
+DO 
+ 
+IF 
+Dequeue of consumer ==1
+Increment the count 
+WHILE
+c_count < check, Exit the thread
+
+Declare Main method
+Accept the command line arguments 
+Handle the unevenly divisible portion for consumers
+Set the threads and initialize the mutex object
+Print the current time 
+Print the values  number of buffers, producers, consumers, items produced by producer,  items consumed by consumer, Over consume amount , on? And producer consumer sleep times. 
+
+FOR I<P 
+
+Start a new producer thread 
+
+FOR I<C
+
+Start a new consumer thread 
+
+FOR I<C
+Wait for the specific thread to terminate
+Print Consumer thread join 
+Reset the clock
+Print Current time 
+Set Check to 0 
+Print Producer Array
+For i< (P*X)
+Print the Producer and Consumer Value
+
+IF
+ProducerValue== ConsumerValue
+Print Producer and Consumer Arrays match 
+Remove the semaphore name, close the semaphore
+Print the total time. 
